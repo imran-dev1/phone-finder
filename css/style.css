@@ -1,0 +1,52 @@
+/* Font  */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+
+/* Base Style  */
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(226, 235, 255);
+  background-image: url(../images/overlay.png);
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1000px;
+}
+
+/* Other Sections  */
+#search-field {
+  border-radius: 50px 0 0 50px;
+}
+#search-btn {
+  border-radius: 0 50px 50px 0;
+}
+.form-control {
+  border: 2px solid #fff;
+}
+.form-control:focus {
+  border-color: #13c5ea;
+}
+.card {
+  border-radius: 1rem;
+  /* background: #ffffff96; */
+}
+#results-container .card img {
+  transition: 0.5s ease;
+}
+#results-container .card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+#results-container .card:hover img {
+  transform: scale(1.1);
+}
+.text-muted {
+  color: #383838 !important;
+}
+h6.heading {
+  border-bottom: 1px solid#e7e7e7;
+  padding-bottom: 3px;
+}
