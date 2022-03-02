@@ -107,6 +107,7 @@ const displayPhones = (phones) => {
         messageDiv.innerText = "";
 
         phones.forEach((phone) => {
+          console.log(phone);
           const childDiv = document.createElement("div");
           childDiv.classList.add("col");
           childDiv.innerHTML = `
@@ -164,26 +165,58 @@ const displayPhnDetails = (phone) => {
   div.classList.add("row", "g-0");
   div.innerHTML = `
         <div class="col-md-4 p-3">
-            <img src="${phone.image}" class="img-fluid rounded-start w-100" alt="...">
+            <img src="${
+              phone.image
+            }" class="img-fluid rounded-start w-100" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body"> 
                 <h3 class="card-title">${phone.name}</h3>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Brand: </strong>${phone.brand}</small></p>
-                <p class="card-text"><small class="text-muted"><strong>Release: </strong>${phone.releaseDate}</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Brand: </strong>${
+                  phone.brand
+                }</small></p>
+                <p class="card-text"><small class="text-muted"><strong>Release: </strong>${
+                  phone.releaseDate !== undefined && phone.releaseDate !== ""
+                    ? phone.releaseDate
+                    : "Not Found"
+                }</small></p>
                 <h6 class="heading">Main Features:</h6>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Chipset: </strong>${phone.mainFeatures.chipSet}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Display: </strong>${phone.mainFeatures.displaySize}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Memory: </strong>${phone.mainFeatures.memory}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Sensors: </strong>${phone.mainFeatures.sensors}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Storage: </strong>${phone.mainFeatures.storage}</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Chipset: </strong>${
+                  phone.mainFeatures.chipSet
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Display: </strong>${
+                  phone.mainFeatures.displaySize
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Memory: </strong>${
+                  phone.mainFeatures.memory
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Sensors: </strong>${
+                  phone.mainFeatures.sensors
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Storage: </strong>${
+                  phone.mainFeatures.storage
+                }</small></p>
                 <h6 class="heading mt-3">Others:</h6>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Bluetooth: </strong>${phone.others.Bluetooth}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>GPS: </strong>${phone.others.GPS}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>NFC: </strong>${phone.others.NFC}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>Radio: </strong>${phone.others.Radio}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>USB: </strong>${phone.others.USB}</small></p>
-                <p class="card-text mb-0"><small class="text-muted"><strong>WLAN: </strong>${phone.others.WLAN}</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Bluetooth: </strong>${
+                  phone.others !== undefined
+                    ? phone.others.Bluetooth
+                    : "Not Found"
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>GPS: </strong>${
+                  phone.others !== undefined ? phone.others.GPS : "Not Found"
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>NFC: </strong>${
+                  phone.others !== undefined ? phone.others.NFC : "Not Found"
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>Radio: </strong>${
+                  phone.others !== undefined ? phone.others.Radio : "Not Found"
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>USB: </strong>${
+                  phone.others !== undefined ? phone.others.USB : "Not Found"
+                }</small></p>
+                <p class="card-text mb-0"><small class="text-muted"><strong>WLAN: </strong>${
+                  phone.others !== undefined ? phone.others.WLAN : "Not Found"
+                }</small></p>
                 
             </div>
         </div>
