@@ -40,7 +40,7 @@ const searchPhone = () => {
     displaySpinner(true);
     messageDiv.innerText = "";
 
-    // Fetch API 
+    // Fetch API
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchField.value}`;
     searchField.value = "";
     fetch(url)
@@ -52,7 +52,7 @@ const searchPhone = () => {
 const displayPhones = (phones) => {
   const resultsContainer = document.getElementById("results-container");
 
-  // If Doesn't find the result 
+  // If Doesn't find the result
   if (phones.length === 0) {
     resultsContainer.textContent = "";
     messageDiv.textContent = "";
@@ -67,8 +67,7 @@ const displayPhones = (phones) => {
     setTimeout(displayMessage, 1000);
     messageDiv.style.display = "block";
   } else {
-
-    // If Found the Result 
+    // If Found the Result
     messageDiv.innerText = "";
     resultsContainer.textContent = "";
 
@@ -78,7 +77,7 @@ const displayPhones = (phones) => {
     document.getElementById("phone-details").textContent = "";
     const loadMoreBtn = document.getElementById("load-more");
 
-    // Show 20 products 
+    // Show 20 products
     if (phones.length > 20) {
       loadMoreBtn.style.display = "none";
       for (let i = 0; i < 20; i++) {
@@ -98,7 +97,7 @@ const displayPhones = (phones) => {
         resultsContainer.appendChild(childDiv);
       }
 
-      // Show All Button Handler 
+      // Show All Button Handler
       setTimeout(displayLoadMoreBtn, 1000);
       loadMoreBtn.addEventListener("click", () => {
         loadMoreBtn.style.display = "none";
@@ -124,8 +123,7 @@ const displayPhones = (phones) => {
         });
       });
     } else {
-
-      // If less than 20 products 
+      // If less than 20 products
       loadMoreBtn.style.display = "none";
 
       phones.forEach((phone) => {
@@ -170,7 +168,7 @@ const displayPhnDetails = (phone) => {
         </div>
         <div class="col-md-8">
             <div class="card-body"> 
-                <h5 class="card-title">${phone.name}</h5>
+                <h3 class="card-title">${phone.name}</h3>
                 <p class="card-text mb-0"><small class="text-muted"><strong>Brand: </strong>${phone.brand}</small></p>
                 <p class="card-text"><small class="text-muted"><strong>Release: </strong>${phone.releaseDate}</small></p>
                 <h6 class="heading">Main Features:</h6>
