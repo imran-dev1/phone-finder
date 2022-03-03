@@ -7,6 +7,8 @@ body {
   font-family: "Nunito", sans-serif;
   background-color: rgb(226, 235, 255);
   background-image: url(../images/overlay.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   display: flex;
   min-height: 100vh;
